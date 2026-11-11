@@ -1,0 +1,3 @@
+# Игнорировать папки кэша Python (включая src/__pycache__ и tests/__pycache__)
+__pycache__/
+*.pyc
