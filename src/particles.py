@@ -10,16 +10,15 @@ def initialize_particles(n=16, spacing=1.5):
     for i in range(side):
         for j in range(side):
             if len(positions_list) < n:
-                # Координаты x и y для каждой частицы
                 positions_list.append([i * spacing, j * spacing])
     
-    # Превращаем список в массив NumPy (как требует задание)
     positions = np.array(positions_list, dtype=float)
     
-    # Начальные скорости: все нули (частицы сначала покоятся)
-    velocities = np.zeros((n, 2))
+    # --- ИЗМЕНЕНИЕ: Генерируем случайные скорости ---
+    # np.random.normal(среднее, разброс, размер)
+    # Это создаст скорости, которые в среднем близки к нулю, но у каждой частицы будут свои.
+    velocities = np.random.normal(0, 0.5, (n, 2))
     
-    # Массы: все равны 1 (как сказано в задании)
     masses = np.ones(n)
     
     return positions, velocities, masses

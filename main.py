@@ -14,7 +14,7 @@ def main():
     
     # Параметры из задания
     dt = 0.001
-    steps = 1000
+    steps = 5000
     
     times = []
     energies = []
